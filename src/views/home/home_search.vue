@@ -8,7 +8,7 @@
       <div class="home-search-content-i">
         <div class="home-search-content-icon">
           <img src="@/assets/img/tabbar/tabbar_user_selected.png" alt="">
-          <span>官方正版3333</span>
+          <span>官方正版2222</span>
         </div>
         <div class="home-search-content-icon">
           <img src="@/assets/img/tabbar/tabbar_user_selected.png" alt="">
