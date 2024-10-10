@@ -38,6 +38,9 @@ const homeStore = useHomeStore()
   padding-right: 260px;
   height: max-content;
 
+
+  min-width: 1200px;
+
   color: #fff;
   background-color: rgb(8, 2, 17);
   
