@@ -2,33 +2,43 @@
   <div class="tabbar">
     
     <div class="tabbar-left">
-      <div class="tabbar-left-icon">
-        <img src="@/assets/img/tabbar/tabbar_home_selected.png" alt="">
-        <span>共享游|一折玩正版</span>
+      <div class="tabbar-left-bg">
+        <img class="icon" src="@/assets/img/tabbar/tabbar_home_selected.png" alt="">
+        <span class="title">共享游|一折玩正版</span>
       </div>
 
       <div class="tabbar-left-item">
         <template v-for="(item, index) in tabbarData">
-        <div 
-          class="tabbar-item" 
-          :class="{ active: currentIndex == index }"
-          @click="itemClick(index, item)"
-        >
-          <!-- <img v-if="currentIndex !== index" :src="getAssetURL(item.image)" alt="" srcset=""> -->
-          <!-- <img v-else :src="getAssetURL(item.imageActive)" alt="" srcset=""> -->
-          <span class="text">{{ item.text }}</span>
-        </div>
-      </template>
+          <div 
+            class="tabbar-item" 
+            :class="{ active: currentIndex == index }"
+            @click="itemClick(index, item)"
+          >
+            <!-- <img v-if="currentIndex !== index" :src="getAssetURL(item.image)" alt="" srcset=""> -->
+            <!-- <img v-else :src="getAssetURL(item.imageActive)" alt="" srcset=""> -->
+            <span class="text">{{ item.text }}</span>
+          </div>
+        </template>
       </div>
 
     </div>
 
-    <div class="tabbar-right" @click="loginClick()">
-      <img src="@/assets/img/tabbar/tabbar_home_selected.png" alt="">
-      <span>登录/注册</span>
+    <div class="tabbar-right" 
+    :style="{ 'margin-right': hasLogin ? 80 + 'px' : 127 + 'px' }">
+      <div class="button" @click="loginClick()">
+        <span>{{loginTitle}}</span>
+      </div>
+      <div class="user" 
+      v-if="hasLogin"
+      @click="userClick()">
+        <img class="icon" src="@/assets/img/tabbar/tabbar_user_selected.png" alt="">
+        <span class="text">用户大先生</span>
+      </div>
+      
     </div>
    
   </div>
+  <tabbar_menu v-show="isShowMenu" />
 </template>
 
 <script setup>
@@ -36,9 +46,18 @@
 import tabbarData from "@/assets/data/tabbar.js"
 import { ref } from "vue";
 import { useRouter } from "vue-router";
+import tabbar_menu from "@/views/home/components/tabbar_menu.vue";
 
-const currentIndex = ref(0)
 const router = useRouter()
+// 当前点击索引
+const currentIndex = ref(0)
+// 是否已登录
+const hasLogin = ref(false)
+// 登录按钮文案
+const loginTitle = ref('登录/注册')
+// 是否展示菜单
+const isShowMenu = ref(false)
+
 
 
 // 导航栏点击
@@ -51,6 +70,16 @@ const itemClick = (index, item) => {
 // 登录注册点击
 const loginClick = () => {
   console.log("登录注册点击")
+  hasLogin.value = !hasLogin.value
+  loginTitle.value = hasLogin.value ? "立即上架" : "登录/注册"
+}
+
+// 用户栏点击
+const userClick = () => {
+  console.log("用户栏点击")
+  if (hasLogin.value) {
+    isShowMenu.value = !isShowMenu.value
+  }
 }
 
 </script>
@@ -64,29 +93,33 @@ const loginClick = () => {
   top: 0;
   left: 0;
   right: 0;
-  height: 70px;
+  height: 60px;
 
-  line-height: 70px;
-  
-  background-color: rgba(35, 43, 67, 1);
-
+  background-color: rgba(30, 35, 41, 1);
 
   .tabbar-left {
     display: flex;
+    margin-left: 20px;
 
-
-    .tabbar-left-icon {
+    .tabbar-left-bg {
       display: flex;
       align-items: center;
-      font-size: 20px;
-      color: #fff;
-      // background-color: #f00;
+      .icon {
+        width: 42px;
+        height: 42px;
+      }
+      .title {
+        font-family: "AlimamaShuHeiTi-Bold";
+        font-size: 20px;
+        color: rgba(116, 124, 134, 1);
+      }
     }
 
     .tabbar-left-item {
       display: flex;
 
-      margin-left: 50px;
+      margin-left: 61px;
+      margin-top: 10px;
       
       .tabbar-item {
         flex: 1;
@@ -95,25 +128,22 @@ const loginClick = () => {
         justify-content: center;
         align-items: center;
 
-        width: 180px;
+        margin-right: 10px;
 
+        width: 120px;
+        background-color: rgba(33, 43, 69, 1);
         &.active {
-          color: #fff;
-          background-color: rgb(79, 97, 151);
+          color: rgba(243, 243, 243, 1);
+          background-color: rgba(75, 97, 155, 1); 
         }
 
         .text {
-          font-size:20px;
-          color: #fff;
+          font-family: "AlimamaShuHeiTi-Bold";
+          font-size:16px;
+          color: rgba(243, 243, 243, 1);
         }
       }
     }
-    
-  }
-
-  .tabbar-left .tabbar-left-icon > img {
-      width: 46px;
-      height: 46px;
   }
 
   .tabbar-right {
@@ -123,12 +153,43 @@ const loginClick = () => {
 
     font-size: 20px;
     color: #fff;
+
+    .button {
+      display: flex;
+      height: 42px;
+      width: 120px;
+      background-color: rgba(161, 205, 68, 1);
+
+      justify-content: center;
+      // align-items: center;
+
+      line-height: 42px;
+      font-family: "AlimamaShuHeiTi-Bold";
+      font-size:16px;
+      color: rgba(14, 20, 27, 1);
+    }
+
+    .user {
+      display: flex;
+      align-items: center;
+
+      margin-left: 47px;
+
+      .icon {
+        margin-right: 13px;
+        width: 42px;
+        height: 42px;
+      }
+
+      .text {
+        font-family: "AlimamaShuHeiTi-Bold";
+        font-size:16px;
+        color: rgba(116, 124, 134, 1);
+      }
+    }
   }
 
-  .tabbar-right > img {
-      width: 46px;
-      height: 46px;
-  }
+  
   
 }
 </style>

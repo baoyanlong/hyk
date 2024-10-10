@@ -1,17 +1,19 @@
 <template>
   <div class="single-game-item">
-    <img class="image" src="@/assets/img/test/game2.webp" alt="">
-    <span class="single-game-item-title">黑神话悟空 普通版</span>
-    <span class="single-game-item-title2">黑神话悟空详情</span>
+    <img class="image" :src="item.imgUrl" alt="">
+    <span class="single-game-item-title">{{ item.title }}</span>
+    <span class="single-game-item-title2">{{ item.des }}</span>
     <div class="single-game-item-price">
-      <span class="single-game-item-price-original">原价￥300</span>
-      <span class="single-game-item-price-discount">折后￥25起</span>
+      <span class="single-game-item-price-original">{{ item.originalPrice }}</span>
+      <span class="single-game-item-price-discount">{{ item.price }}</span>
     </div>
   </div>
 </template>
 
 <script setup>
-
+const props = defineProps({
+  item:{}
+})
 </script>
 
 <style lang="less" scoped>
@@ -20,51 +22,54 @@
   display: flex;
   flex-direction: column;
 
-  width: 280px;
+  margin-left: 6px;
+  margin-right: 6px;
+
+  // width: 236px;
   // height: 220px;
 
-  background-color: rgb(26, 26, 26);
+  background-color: #1E2329FF;
 
   .image {
     width: 100%;
+    // height: 108px;
   }
 
   .single-game-item-title {
-    margin-top: 5px;
-    margin-left: 10px;
+    margin-top: 4px;
+    margin-left: 12px;
 
     color: #fff;
-    font-size: 18px;
+    font-family: "AlimamaShuHeiTi-Bold";
+    font-size:12px;
   }
   .single-game-item-title2 {
-    margin-top: 5px;
-    margin-left: 10px;
-
-    color: rgb(73, 73, 73);
-    font-size: 10px;
+    margin-top: 3px;
+    margin-left: 12px;
+    font-family: "Alibaba_PuHuiTi";
+    font-size:8px;
+    color: #9E9E9EFF;
   }
 
   .single-game-item-price {
     display: flex;
     justify-content: end;
-
-    align-items: center;
+    align-items: end;
 
     .single-game-item-price-original {
-      margin-top: 5px;
-
-      margin-bottom: 15px;
-
-      color: rgb(73, 73, 73);
-      font-size: 10px;
+      margin-bottom: 7px;
+      font-family: "Alibaba_PuHuiTi";
+      font-size:8px;
+      color: #9E9E9EFF;
     }
     .single-game-item-price-discount {
-      margin-left: 10px;
-      margin-right: 10px;
-      margin-bottom: 10px;
+      margin-left: 5px;
+      margin-right: 6px;
+      margin-bottom: 7px;
 
-      color: rgb(220, 156, 83);
-      font-size: 18px;
+      font-family: "AlimamaShuHeiTi-Bold";
+      font-size:12px;
+      color: #F5B464FF;
     }
   }
 

@@ -6,13 +6,13 @@ const tabbarData = [
     path: "/home",
   },
   {
-    text: "咨询",
+    text: "市场",
     image: "tabbar/tabbar_hot_normal.png",
     imageActive: "tabbar/tabbar_hot_selected.png",
     path: "/market",
   },
   {
-    text: "市场",
+    text: "资讯",
     image: "tabbar/tabbar_helpsale_normal.png",
     imageActive: "tabbar/tabbar_helpsale_selected.png",
     path: "/info",
@@ -26,3 +26,4 @@ const tabbarData = [
 ]
 
 export default tabbarData
+
