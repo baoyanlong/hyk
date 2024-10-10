@@ -2,7 +2,7 @@
   <div class="bar">
     <template v-for="(item) in homebarData">
       <div class="bar_item_bg">
-        <img :src="item.image" alt="" srcset="">
+        <img src="@/assets/img/home/home_bar_custome.png" :src="item.image" alt="" srcset="">
         <span class="title">{{ item.title }}</span>
       </div>
     </template>

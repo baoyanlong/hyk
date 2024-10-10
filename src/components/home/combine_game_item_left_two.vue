@@ -2,7 +2,7 @@
   <div class="combine-game-item-left">
     <div class="top">
       <template v-for="(model) in item.imgUrls">
-        <img :src="model" alt="">
+        <img src="@/assets/img/home/home_combine_game_icon.jpg" :src="model" alt="">
       </template>
     </div>
     <div class="bottom">

@@ -1,6 +1,6 @@
 <template>
   <div class="list_item">
-    <img class="icon" :src="item.imgUrl" alt="" srcset="">
+    <img class="icon" src="@/assets/img/home/home_search_img.jpg" :src="item.imgUrl" alt="" srcset="">
     <div class="des_bg">
       <span class="title">{{ item.title }}</span>
       <span class="des">{{ item.des }}</span>

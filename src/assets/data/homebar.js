@@ -1,7 +1,7 @@
 const homebarData = [
   {
     title: "联系客服",
-    image: "/assets/img/home/home_bar_custome.png",
+    image: "/src/assets/img/home/home_bar_custome.png",
     imageActive: "/src/assets/img/home/home_bar_custome.png",
     path: "/home",
   },

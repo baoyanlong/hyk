@@ -6,7 +6,7 @@
      indicator-color="white">
      <template v-for="(item, index) in bannerData">
       <van-swipe-item >
-        <img class="img" :src="item.imgUrl" alt="" srcset="">
+        <img class="img" src="@/assets/img/test/game_banner.jpg" :src="item.imgUrl" alt="" srcset="">
       </van-swipe-item>
      </template>
     </van-swipe>

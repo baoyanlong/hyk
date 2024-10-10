@@ -1,6 +1,6 @@
 <template>
   <div class="single-game-item">
-    <img class="image" :src="item.imgUrl" alt="">
+    <img class="image" src="@/assets/img/home/home_single_game_icon.jpg" :src="item.imgUrl" alt="">
     <span class="single-game-item-title">{{ item.title }}</span>
     <span class="single-game-item-title2">{{ item.des }}</span>
     <div class="single-game-item-price">
