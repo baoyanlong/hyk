@@ -57,18 +57,18 @@ const props = defineProps({
     }
   }
   .title {
-    font-family: "AlimamaShuHeiTi-Bold";
+    font-family: "AlimamaShuHeiTi";
     font-size:12px;
     color: #FFFFFFFF;
   }
   .label {
-    font-family: "Alibaba_PuHuiTi";
+    font-family: "AlibabaPuHuiTi";
     font-size:8px;
     color: #FFFFFFFF;
   }
   .content {
     margin-left: 3px;
-    font-family: "Alibaba_PuHuiTi";
+    font-family: "AlibabaPuHuiTi";
     font-size:8px;
     color: #9E9E9EFF;
   }

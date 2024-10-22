@@ -43,10 +43,10 @@
 
 <script setup>
 
-import tabbarData from "@/assets/data/tabbar.js"
+import tabbarData from "@/assets/data/tabbar/tabbar.js"
 import { ref } from "vue";
 import { useRouter } from "vue-router";
-import tabbar_menu from "@/views/home/components/tabbar_menu.vue";
+import tabbar_menu from "@/views/home/components/tabbarMenu.vue";
 
 const router = useRouter()
 // 当前点击索引
@@ -89,7 +89,7 @@ const userClick = () => {
   position: fixed;
   display: flex;
   justify-content: space-between;
-
+  min-width: 1200px;
   top: 0;
   left: 0;
   right: 0;
@@ -100,7 +100,7 @@ const userClick = () => {
   .tabbar-left {
     display: flex;
     margin-left: 20px;
-
+    
     .tabbar-left-bg {
       display: flex;
       align-items: center;
@@ -109,7 +109,7 @@ const userClick = () => {
         height: 42px;
       }
       .title {
-        font-family: "AlimamaShuHeiTi-Bold";
+        font-family: "AlimamaShuHeiTi";
         font-size: 20px;
         color: rgba(116, 124, 134, 1);
       }
@@ -129,16 +129,18 @@ const userClick = () => {
         align-items: center;
 
         margin-right: 10px;
-
         width: 120px;
         background-color: rgba(33, 43, 69, 1);
+
+        cursor: pointer;
+
         &.active {
           color: rgba(243, 243, 243, 1);
           background-color: rgba(75, 97, 155, 1); 
         }
 
         .text {
-          font-family: "AlimamaShuHeiTi-Bold";
+          font-family: "AlimamaShuHeiTi";
           font-size:16px;
           color: rgba(243, 243, 243, 1);
         }
@@ -164,9 +166,11 @@ const userClick = () => {
       // align-items: center;
 
       line-height: 42px;
-      font-family: "AlimamaShuHeiTi-Bold";
+      font-family: "AlimamaShuHeiTi";
       font-size:16px;
       color: rgba(14, 20, 27, 1);
+
+      cursor: pointer;
     }
 
     .user {
@@ -174,7 +178,7 @@ const userClick = () => {
       align-items: center;
 
       margin-left: 47px;
-
+      cursor: pointer;
       .icon {
         margin-right: 13px;
         width: 42px;
@@ -182,7 +186,7 @@ const userClick = () => {
       }
 
       .text {
-        font-family: "AlimamaShuHeiTi-Bold";
+        font-family: "AlimamaShuHeiTi";
         font-size:16px;
         color: rgba(116, 124, 134, 1);
       }

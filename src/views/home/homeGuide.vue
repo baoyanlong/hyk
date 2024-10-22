@@ -36,14 +36,14 @@
       background: linear-gradient(90deg, #212B45FF 0%, #191A1D00 100%);
       .title_one {
         margin-left: 7px;
-        font-family: "AlimamaShuHeiTi-Bold";
+        font-family: "AlimamaShuHeiTi";
         font-size:16px;
         color: #FFFFFFFF;
       }
       .title_two {
         margin-left: 10px;
         margin-bottom: 2px;
-        font-family: "Alibaba_PuHuiTi";
+        font-family: "AlibabaPuHuiTi";
         font-size:10px;
         color: #F5B464FF;
       }

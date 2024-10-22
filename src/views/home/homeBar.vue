@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-import homebarData from '@/assets/data/homebar';
+import homebarData from '@/assets/data/home/homebar';
 
 
 </script>
@@ -18,7 +18,7 @@ import homebarData from '@/assets/data/homebar';
 <style lang="less" scoped>
 .bar {
   position: absolute;
-  right: 150px;
+  right: -50px;
   bottom: 300px;
   width: 40px;
 
@@ -47,7 +47,7 @@ import homebarData from '@/assets/data/homebar';
 
     .title {
       margin-top: 2px;
-      font-family: "Alibaba_PuHuiTi";
+      font-family: "AlibabaPuHuiTi";
       font-size: 8px;
       color: #A6A6A6FF;
     }

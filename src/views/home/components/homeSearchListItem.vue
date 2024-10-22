@@ -41,14 +41,14 @@ const props = defineProps ({
 
     .title {
       margin-left: 6px;
-      font-family: "AlimamaShuHeiTi-Bold";
+      font-family: "AlimamaShuHeiTi";
       font-size:12px;
       color: #FFFFFFFF;
     }
     .des {
       margin-top: 3px;
       margin-left: 6px;
-      font-family: "Alibaba_PuHuiTi";
+      font-family: "AlibabaPuHuiTi";
       font-size:8px;
       color: #9E9E9EFF;
     }
@@ -58,7 +58,7 @@ const props = defineProps ({
     align-items: end;
     .price {
       margin-right: 13px;
-      font-family: "AlimamaShuHeiTi-Bold";
+      font-family: "AlimamaShuHeiTi";
       font-size:12px;
       color: #F5B464FF;
     }

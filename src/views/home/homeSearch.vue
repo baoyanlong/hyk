@@ -31,8 +31,8 @@
             <img src="@/assets/img/home/home_search_icon.png" alt="" srcset="" @click="searchClick()">
           </template>
         </a-input>
-        <!-- <home_search_dialog v-show="isShowList"/> -->
-        <home_search_dialog_typetwo v-show="isShowList"/>
+        <!-- <homeSearchDialog v-show="isShowList"/> -->
+        <homeSearchDialogTypetwo v-show="isShowList"/>
       </div>
     </div>
 
@@ -40,8 +40,8 @@
 </template>
 
 <script setup>
-import home_search_dialog from './components/home_search_dialog.vue';
-import home_search_dialog_typetwo from './components/home_search_dialog_typetwo.vue';
+import homeSearchDialog from './components/homeSearchDialog.vue';
+import homeSearchDialogTypetwo from './components/homeSearchDialogTypetwo.vue';
 import { ref } from 'vue';
 
 // 搜索内容
@@ -91,7 +91,7 @@ const searchClick = () => {
   span {
     // line-height: 60px;
     margin-left: 6px;
-    font-family: "Alibaba_PuHuiTi";
+    font-family: "AlibabaPuHuiTi";
     font-size:12px;
     color: rgba(158, 158, 158, 1);
   }
@@ -131,7 +131,7 @@ const searchClick = () => {
 
       span {
         margin-left: 6px;
-        font-family: "AlimamaShuHeiTi-Bold";
+        font-family: "AlimamaShuHeiTi";
         font-size:16px;
         color: rgba(166, 168, 179, 1);
       }
@@ -160,7 +160,7 @@ const searchClick = () => {
       ::v-deep .ant-input {
         background-color: rgba(14, 20, 27, 0.2);
         color: rgba(243, 243, 243, 1);
-        font-family: "Alibaba_PuHuiTi";
+        font-family: "AlibabaPuHuiTi";
         font-size:12px;
       }
 

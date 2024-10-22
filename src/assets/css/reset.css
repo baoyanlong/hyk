@@ -14,4 +14,15 @@ a {
 
 img {
   vertical-align: top;
+  -webkit-user-drag: none; /* 禁止拖动 */
+}
+
+/* 引入字体 */
+@font-face {
+  font-family: "AlimamaShuHeiTi";
+  src: url(@/assets/font/AlimamaShuHeiTi-Bold.woff);
+}
+@font-face {
+  font-family: "AlibabaPuHuiTi";
+  src: url(@/assets/font/Alibaba_PuHuiTi_2.0_55_Regular_55_Regular.ttf);
 }

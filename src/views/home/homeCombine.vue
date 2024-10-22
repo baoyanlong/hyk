@@ -1,9 +1,9 @@
 <template>
-  <div class="home-single">
-    <div class="home-single-top">
-      <div class="top_left">
-        <span class="home-single-top-title1">单体游戏</span>
-        <span class="home-single-top-title2">一号一游戏 独享更清爽</span>
+  <div class="home-combine">
+    <div class="home-combine-top">
+      <div class="home-combine-top-left">
+        <span class="home-combine-top-title1">组合游戏</span>
+        <span class="home-combine-top-title2">一号多游戏 打包超划算</span>
         <img src="@/assets/img/home/home_hot_icon.png" alt="" srcset="">
       </div>
       <a-button class="moreBtn" type="primary"
@@ -11,35 +11,36 @@
       style="background-color: #4B619BFF; 
       width: 98px; 
       height: 28px; 
-      font-family: 'AlimamaShuHeiTi-Bold';
+      font-family: 'AlimamaShuHeiTi';
       font-size:16px;
-      color: #FFFFFFFF
+      color: #FFFFFFFF;
+      border-radius: 0px;
       ">查看更多</a-button>
     </div>
-    <div class="home-single-content">
-      <template v-for="(item) in homeSingleListData">
-        <single_game_item :item="item"/>
-      </template>
+    <div class="home-combine-content">
+      <combineGameItem :item="homeCombineListData[0]"/>
+      <combineGameItemTwo :item="homeCombineListData[1]"/>
     </div>
   </div>
 </template>
 
 <script setup>
-import single_game_item from '@/components/home/single_game_item.vue';
+import combineGameItem from '@/components/home/combineGameItem.vue';
+import combineGameItemTwo from '@/components/home/combineGameItemTwo.vue';
+
 import useHomeStore from '@/stores/modules/home';
 import { storeToRefs } from 'pinia';
-
 const homeStore = useHomeStore()
-const { homeSingleListData } = storeToRefs(homeStore)
+const { homeCombineListData } = storeToRefs(homeStore)
+
 
 const clickMore = () => {
   console.log("clickMore")
 }
-
 </script>
 
 <style lang="less" scoped>
-.home-single {
+.home-combine {
   display: flex;
   flex-direction: column;
 
@@ -49,7 +50,7 @@ const clickMore = () => {
   background-color: transparent;
 
 
-  .home-single-top {
+  .home-combine-top {
     display: flex;
     justify-content: space-between;
     align-items: end;
@@ -58,7 +59,11 @@ const clickMore = () => {
 
     background-color: transparent;
 
-    .top_left {
+    .moreBtn {
+      padding-top: 1px;
+    }
+
+    .home-combine-top-left {
       display: flex;
       justify-content: start;
       align-items: end;
@@ -68,50 +73,38 @@ const clickMore = () => {
 
       padding-bottom: 4px;
 
-      .home-single-top-title1 {
+      .home-combine-top-title1 {
         margin-left: 7px;
-        font-family: "AlimamaShuHeiTi-Bold";
+        font-family: "AlimamaShuHeiTi";
         font-size:16px;
         color: #FFFFFFFF;
-        // background-color: rgb(230, 38, 61);
       }
 
-      .home-single-top-title2 {
+      .home-combine-top-title2 {
         margin-left: 8px;
         margin-bottom: 2px;
-        font-family: "Alibaba_PuHuiTi";
+        font-family: "AlibabaPuHuiTi";
         font-size:10px;
         color: #F5B464FF;
-        // background-color: rgb(130, 38, 61);
       }
+
       img {
         margin-left: 3px;
         margin-bottom: 2px;
         width: 14px;
         height: 14px;
       }
-    }
-    
-    .moreBtn {
-      border-radius: 0px;
-      padding-top: 1px;
+      
     }
 
+    .home-combine-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+
+
     
-  }
-
-  .home-single-content {
-    display: flex;
-    justify-content: space-evenly;
-
-    background-color: #212B45FF;
-
-    // height: 162px;
-
-    padding-top: 10px;
-    padding-left: 4px;
-    padding-right: 4px;
-    padding-bottom: 12px;
   }
 }
 </style>

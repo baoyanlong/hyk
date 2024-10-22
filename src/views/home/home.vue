@@ -1,22 +1,24 @@
 <template>
   <div class="home">
-    <home_banner/>
-    <home_search/>
-    <home_single/>
-    <home_combine/>
-    <home_guide/>
-    <home_bar/>
+    <homeBanner/>
+    <homeSearch/>
+    <homeSingle/>
+    <homeCombine/>
+    <homeGuide/>
+    <homeBar/>
+    <!-- <homeBottom/> -->
   </div>
 </template>
 
 <script setup>
 // 导入页面组件
-import home_banner from './home_banner.vue';
-import home_search from './home_search.vue';
-import home_single from './home_single.vue';
-import home_combine from './home_combine.vue';
-import home_guide from './home_guide.vue';
-import home_bar from './home_bar.vue';
+import homeBanner from './homeBanner.vue';
+import homeSearch from './homeSearch.vue';
+import homeSingle from './homeSingle.vue';
+import homeCombine from './homeCombine.vue';
+import homeGuide from './homeGuide.vue';
+import homeBar from './homeBar.vue';
+import homeBottom from './homeBottom.vue';
 // 导入数据文件
 import useHomeStore from '@/stores/modules/home';
 
@@ -34,15 +36,13 @@ const homeStore = useHomeStore()
   right: 0;
 
   padding-top: 80px;
-  padding-left: 260px;
-  padding-right: 260px;
-  height: max-content;
-
-
-  min-width: 1200px;
+  height: 100%;
+  width: 1100px;
+  margin: 0 auto;
 
   color: #fff;
   background-color: rgb(8, 2, 17);
   
 }
+
 </style>

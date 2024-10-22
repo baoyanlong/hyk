@@ -3,7 +3,7 @@
     <ul>
       <template v-for="(item) in searchDialogType2Data">
         <li>
-        <home_search_list_item :item="item"/>
+        <homeSearchListItem :item="item"/>
         </li>
       </template>
     </ul>
@@ -11,7 +11,7 @@
 </template>
 
 <script setup>
-import home_search_list_item from './home_search_list_item.vue';
+import homeSearchListItem from './homeSearchListItem.vue';
 import useHomeStore from '@/stores/modules/home';
 import { storeToRefs } from 'pinia';
 

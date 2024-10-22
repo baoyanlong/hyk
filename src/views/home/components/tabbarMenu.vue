@@ -15,7 +15,7 @@
 </template>
 
 <script setup>
-import tabbarMenuData from '@/assets/data/tabbarMenu';
+import tabbarMenuData from '@/assets/data/tabbar/tabbarMenu';
 
 // 导航栏点击
 const itemClick = (index, item) => {
@@ -59,7 +59,7 @@ const itemClick = (index, item) => {
       justify-content: center;
       margin-left: 6px;
       .text {
-        font-family: "AlimamaShuHeiTi-Bold";
+        font-family: "AlimamaShuHeiTi";
         font-size:20px;
         color: rgba(33, 43, 69, 1);
       }
@@ -67,7 +67,7 @@ const itemClick = (index, item) => {
 
     .des {
       margin-left: 13px;
-      font-family: "AlimamaShuHeiTi-Bold";
+      font-family: "AlimamaShuHeiTi";
       font-size:16px;
       color: rgba(116, 124, 134, 1);
     }

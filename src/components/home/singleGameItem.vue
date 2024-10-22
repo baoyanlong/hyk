@@ -40,13 +40,13 @@ const props = defineProps({
     margin-left: 12px;
 
     color: #fff;
-    font-family: "AlimamaShuHeiTi-Bold";
+    font-family: "AlimamaShuHeiTi";
     font-size:12px;
   }
   .single-game-item-title2 {
     margin-top: 3px;
     margin-left: 12px;
-    font-family: "Alibaba_PuHuiTi";
+    font-family: "AlibabaPuHuiTi";
     font-size:8px;
     color: #9E9E9EFF;
   }
@@ -58,7 +58,7 @@ const props = defineProps({
 
     .single-game-item-price-original {
       margin-bottom: 7px;
-      font-family: "Alibaba_PuHuiTi";
+      font-family: "AlibabaPuHuiTi";
       font-size:8px;
       color: #9E9E9EFF;
     }
@@ -67,7 +67,7 @@ const props = defineProps({
       margin-right: 6px;
       margin-bottom: 7px;
 
-      font-family: "AlimamaShuHeiTi-Bold";
+      font-family: "AlimamaShuHeiTi";
       font-size:12px;
       color: #F5B464FF;
     }

@@ -15,7 +15,7 @@
       style="background-color: #A1CD44FF; 
       width: 89px; 
       height: 26px; 
-      font-family: 'Alibaba_PuHuiTi';
+      font-family: 'AlibabaPuHuiTi';
       font-size:14px;
       color: #1B1B1BFF
       ">立即购买</a-button>
@@ -64,7 +64,7 @@ const props = defineProps({
       top: 5px;
       height: 22px;
 
-      font-family: "AlimamaShuHeiTi-Bold";
+      font-family: "AlimamaShuHeiTi";
       font-size:12px;
       color: #FFFFFFFF;
     }
@@ -74,7 +74,7 @@ const props = defineProps({
       left: 9px;
       top: 34px;
 
-      font-family: "Alibaba_PuHuiTi";
+      font-family: "AlibabaPuHuiTi";
       font-size:8px;
       color: #9E9E9EFF;
     }
@@ -84,7 +84,7 @@ const props = defineProps({
       right: 103px;
       bottom: 23px;
 
-      font-family: "Alibaba_PuHuiTi";
+      font-family: "AlibabaPuHuiTi";
       font-size:8px;
       color: #9E9E9EFF;
     }
@@ -94,7 +94,7 @@ const props = defineProps({
       right: 103px;
       bottom: 6px;
 
-      font-family: "AlimamaShuHeiTi-Bold";
+      font-family: "AlimamaShuHeiTi";
       font-size:12px;
       color: #F5B464FF;
     }

@@ -98,7 +98,7 @@ const onChange = (index) => {
     line-height: 40px;
     background-color: rgba(30, 35, 41, 1);
 
-    font-family: "Alibaba_PuHuiTi";
+    font-family: "AlibabaPuHuiTi";
     font-size:12px;
     color: rgba(158, 158, 158, 1);
 

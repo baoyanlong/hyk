@@ -49,7 +49,7 @@ const clickItem = (item) => {
   z-index: 10;
 
   .no_content {
-    font-family: "Alibaba_PuHuiTi";
+    font-family: "AlibabaPuHuiTi";
     font-size:12px;
     color: #9E9E9EFF;
   }
@@ -68,7 +68,7 @@ const clickItem = (item) => {
     span {
       margin-right: 3px;
       margin-top: 2px;
-      font-family: "AlimamaShuHeiTi-Bold";
+      font-family: "AlimamaShuHeiTi";
       font-size:12px;
       color: #9E9E9EFF;
     }
@@ -80,14 +80,14 @@ const clickItem = (item) => {
     align-items: center;
 
     .order {
-      font-family: "AlimamaShuHeiTi-Bold";
+      font-family: "AlimamaShuHeiTi";
       font-size:12px;
       color: #F5B464FF;
     }
 
     .name {
       margin-left: 9px;
-      font-family: "AlimamaShuHeiTi-Bold";
+      font-family: "AlimamaShuHeiTi";
       font-size:12px;
       color: #F3F3F3FF;
     }
