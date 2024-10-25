@@ -1,5 +1,5 @@
 <template>
-  <div class="single-game-item">
+  <div class="single-game-item" :style="{ width: itemWidth + 'px'}">
     <img class="image" src="@/assets/img/home/home_single_game_icon.jpg" :src="item.imgUrl" alt="">
     <span class="single-game-item-title">{{ item.title }}</span>
     <span class="single-game-item-title2">{{ item.des }}</span>
@@ -12,7 +12,8 @@
 
 <script setup>
 const props = defineProps({
-  item:{}
+  item:{},
+  itemWidth: Number
 })
 </script>
 
@@ -22,17 +23,11 @@ const props = defineProps({
   display: flex;
   flex-direction: column;
 
-  margin-left: 6px;
-  margin-right: 6px;
-
-  // width: 236px;
-  // height: 220px;
-
   background-color: #1E2329FF;
+  margin-bottom: 10px;
 
   .image {
     width: 100%;
-    // height: 108px;
   }
 
   .single-game-item-title {

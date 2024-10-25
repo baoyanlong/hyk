@@ -1,38 +1,36 @@
 <template>
-  <div class="home-single">
+  <div class="single-game-content">
     <div class="home-single-top">
       <div class="top_left">
         <span class="home-single-top-title1">单体游戏</span>
         <span class="home-single-top-title2">一号一游戏 独享更清爽</span>
         <img src="@/assets/img/home/home_hot_icon.png" alt="" srcset="">
       </div>
-      <a-button class="moreBtn" type="primary"
-      @click="clickMore()" 
-      style="background-color: #4B619BFF; 
-      width: 98px; 
-      height: 28px; 
-      font-family: 'AlimamaShuHeiTi';
-      font-size:16px;
-      color: #FFFFFFFF
-      ">查看更多</a-button>
+      <gameListFilter/>
     </div>
-    <div class="home-single-content">
-      <template v-for="(item) in homeSingleListData">
+    <div class="single-game-list">
+      <template v-for="(item) in singleListData">
         <singleGameItem :item="item" :item-width="itemWidth"/>
       </template>
+      <template v-if="emptyCount > 0" v-for="index in emptyCount">
+        <div :style="{width: itemWidth + 'px'}"></div>
+      </template>
     </div>
+
+    
   </div>
 </template>
 
 <script setup>
-import singleGameItem from '@/components/home/singleGameItem.vue';
-import useHomeStore from '@/stores/modules/home';
-import useMainStore from '@/stores/modules/main';
 import { storeToRefs } from 'pinia';
-import { computed } from 'vue';
+import gameListFilter from './gameListFilter.vue';
+import useMarketStore from '@/stores/modules/market';
+import singleGameItem from '@/components/home/singleGameItem.vue';
+import useMainStore from '@/stores/modules/main';
+import { computed, ref } from 'vue';
 
-const homeStore = useHomeStore()
-const { homeSingleListData } = storeToRefs(homeStore)
+const marketStore = useMarketStore()
+const { singleListData } = storeToRefs(marketStore)
 
 const mainStore = useMainStore()
 const { pageWidth } = storeToRefs(mainStore)
@@ -41,20 +39,22 @@ const itemWidth = computed(() => {
   return (pageWidth.value - 3*12 - 2*10) / 4
 })
 
-const clickMore = () => {
-  console.log("clickMore")
-}
+const emptyCount = computed( () => {
+  return (singleListData.value.length % 4) == 0 ? 0 : 4 - (singleListData.value.length % 4)
+})
+
 
 </script>
 
 <style lang="less" scoped>
-.home-single {
+.single-game-content {
   display: flex;
   flex-direction: column;
 
-  margin-top: 12px;
-  background-color: transparent;
 
+  margin-top: 12px;
+
+  background-color: transparent;
   .home-single-top {
     display: flex;
     justify-content: space-between;
@@ -98,17 +98,15 @@ const clickMore = () => {
       }
     }
     
-    .moreBtn {
-      border-radius: 0px;
-      padding-top: 1px;
-    }
-
-    
   }
 
-  .home-single-content {
+  .single-game-list {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
+    // align-content: space-between;
+    // gap: 12px;
 
     background-color: #212B45FF;
 
@@ -117,5 +115,8 @@ const clickMore = () => {
     padding-right: 10px;
     padding-bottom: 2px;
   }
+
+  
+  
 }
 </style>

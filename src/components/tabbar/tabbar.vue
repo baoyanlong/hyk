@@ -47,6 +47,8 @@ import tabbarData from "@/assets/data/tabbar/tabbar.js"
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 import tabbar_menu from "@/views/home/components/tabbarMenu.vue";
+import useMainStore from "@/stores/modules/main";
+import { storeToRefs } from "pinia";
 
 const router = useRouter()
 // 当前点击索引
@@ -57,6 +59,9 @@ const hasLogin = ref(false)
 const loginTitle = ref('登录/注册')
 // 是否展示菜单
 const isShowMenu = ref(false)
+
+const mainStore = useMainStore()
+const { isShowLogin } = storeToRefs(mainStore)
 
 
 
@@ -70,6 +75,7 @@ const itemClick = (index, item) => {
 // 登录注册点击
 const loginClick = () => {
   console.log("登录注册点击")
+  isShowLogin.value = true
   hasLogin.value = !hasLogin.value
   loginTitle.value = hasLogin.value ? "立即上架" : "登录/注册"
 }

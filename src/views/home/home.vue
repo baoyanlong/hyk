@@ -6,7 +6,6 @@
     <homeCombine/>
     <homeGuide/>
     <homeBar/>
-    <!-- <homeBottom/> -->
   </div>
 </template>
 
@@ -18,26 +17,18 @@ import homeSingle from './homeSingle.vue';
 import homeCombine from './homeCombine.vue';
 import homeGuide from './homeGuide.vue';
 import homeBar from './homeBar.vue';
-import homeBottom from './homeBottom.vue';
+
 // 导入数据文件
 import useHomeStore from '@/stores/modules/home';
 
 const homeStore = useHomeStore()
 
-
 </script>
 
 <style lang="less" scoped>
 .home {
-  position: relative;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-
   padding-top: 80px;
-  height: 100%;
-  width: 1100px;
+  width: var(--page-width);
   margin: 0 auto;
 
   color: #fff;

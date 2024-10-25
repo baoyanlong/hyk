@@ -21,8 +21,10 @@ img {
 @font-face {
   font-family: "AlimamaShuHeiTi";
   src: url(@/assets/font/AlimamaShuHeiTi-Bold.woff);
+  font-weight: 400;
 }
 @font-face {
   font-family: "AlibabaPuHuiTi";
   src: url(@/assets/font/Alibaba_PuHuiTi_2.0_55_Regular_55_Regular.ttf);
+  font-weight: 400;
 }

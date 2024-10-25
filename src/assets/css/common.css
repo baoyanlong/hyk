@@ -2,6 +2,7 @@
   --primary-color: #212B45; /* 主题颜色 */
   --background-color:#1E2329; /* 背景颜色 */
   --text-color:#747C86; /* 文字颜色 */
+  --page-width: 1100px; /* 设定全局内容宽度 */
 }
 
 body {

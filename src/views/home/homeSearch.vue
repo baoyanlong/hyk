@@ -150,8 +150,6 @@ const searchClick = () => {
 
     
     .search_bg {
-
-      
       background-color: rgba(33, 43, 69, 0.2);
       border: 1px solid rgb(181, 129, 71);
       border-radius: 3px;
@@ -164,6 +162,10 @@ const searchClick = () => {
         font-size:12px;
       }
 
+      ::v-deep .ant-input::placeholder {
+        color: #A6A6A6; 
+      }
+
       ::v-deep .ant-input-suffix {
       // background-color: rgb(26, 27, 26);
         width: 20px;
@@ -174,7 +176,9 @@ const searchClick = () => {
           height: 20px;
         }
       }
+      
     }
+    
   }
 }
 </style>
