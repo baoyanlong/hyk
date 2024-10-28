@@ -18,7 +18,7 @@
     </div>
     <div class="home-single-content">
       <template v-for="(item) in homeSingleListData">
-        <singleGameItem :item="item" :item-width="itemWidth"/>
+        <singleGameItem :item="item" :item-width="itemWidth" @click="goDetail()"/>
       </template>
     </div>
   </div>
@@ -30,6 +30,9 @@ import useHomeStore from '@/stores/modules/home';
 import useMainStore from '@/stores/modules/main';
 import { storeToRefs } from 'pinia';
 import { computed } from 'vue';
+import { useRoute } from 'vue-router';
+import { useRouter } from "vue-router";
+const router = useRouter()
 
 const homeStore = useHomeStore()
 const { homeSingleListData } = storeToRefs(homeStore)
@@ -45,6 +48,9 @@ const clickMore = () => {
   console.log("clickMore")
 }
 
+const goDetail = () => {
+  router.push("/detail")
+}
 </script>
 
 <style lang="less" scoped>
@@ -54,6 +60,7 @@ const clickMore = () => {
 
   margin-top: 12px;
   background-color: transparent;
+  cursor: pointer;
 
   .home-single-top {
     display: flex;

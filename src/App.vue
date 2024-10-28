@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <RouterView/>
+    <RouterView :style="{'padding-top': '80' + 'px'}"/>
     <tabbar/>
     <div class="bottom">
       <homeBottom/>
@@ -13,7 +13,7 @@
   import tabbar from './components/tabbar/tabbar.vue';
   import homeBottom from './views/home/homeBottom.vue';
   import login from './views/login/login.vue';
-  
+
   import useMainStore from '@/stores/modules/main';
   import { storeToRefs } from 'pinia';
 
