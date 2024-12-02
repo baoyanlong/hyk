@@ -4,3 +4,11 @@ interface ApiResponseData<T> {
   data: T
   msg: string
 }
+
+interface ListData<T> {
+  current: number
+  pages: number
+  size: number
+  total: number
+  records: T[]
+}

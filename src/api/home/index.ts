@@ -1,20 +1,18 @@
 import { request } from "@/utils/service"
-import type * as Login from "./types/login"
+import type * as Home from "./types/home"
 
-/** 手机号验证码登录 */
-export function loginApi(data: Login.LoginRequestData) {
-  return request<Login.LoginResponseData>({
-    url: "login/loginWithPhone",
-    method: "post",
-    data
+/** banner列表 */
+export function getBannerListApi() {
+  return request<Home.BannerListResponseData>({
+    url: "homepage/banner-list",
+    method: "get"
   })
 }
 
-/** 发送验证码 */
-export function getSendCodeApi(data: Login.LoginSendCodeRequestData) {
-  return request<Login.LoginSendCodeResponseData>({
-    url: "login/sendCode",
-    method: "get",
-    data
+/** 获取广播内容 */
+export function getBroadcastApi() {
+  return request<Home.BroadcastResponseData>({
+    url: "homepage/broadcast",
+    method: "get"
   })
 }
