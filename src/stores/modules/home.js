@@ -1,4 +1,4 @@
-import { getHomeData } from "@/service/modules/home";
+import { getHomeData } from "@/api/modules/home";
 import { defineStore } from "pinia";
 
 const useHomeStore = defineStore("home", {

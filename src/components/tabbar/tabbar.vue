@@ -187,7 +187,7 @@ const userClick = () => {
       cursor: pointer;
       .icon {
         margin-right: 13px;
-        width: 42px;
+        width: 44px;
         height: 42px;
       }
 
