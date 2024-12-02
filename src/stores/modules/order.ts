@@ -1,8 +1,24 @@
-import { reactive, ref } from "vue"
 import { pinia } from "@/stores"
 import { defineStore } from "pinia"
-import { createOrderApi, getBuyerGetCaptchaApi, getBuyerRecordListApi, getPayMethodApi, getSellerRecordListApi, getShareAccountApi, payApi, queryPayResultApi } from "@/api/order"
-import { BuyerGetCaptchaRequestData, BuyerRecordListRequestData, CreateOrderRequestData, GetShareAccountRequestData, PayRequestData, QueryPayResultRequestData, SellerRecordListRequestData } from "@/api/order/types/order"
+import {
+  createOrderApi,
+  getBuyerGetCaptchaApi,
+  getBuyerRecordListApi,
+  getPayMethodApi,
+  getSellerRecordListApi,
+  getShareAccountApi,
+  payApi,
+  queryPayResultApi
+} from "@/api/order"
+import {
+  BuyerGetCaptchaRequestData,
+  BuyerRecordListRequestData,
+  CreateOrderRequestData,
+  GetShareAccountRequestData,
+  PayRequestData,
+  QueryPayResultRequestData,
+  SellerRecordListRequestData
+} from "@/api/order/types/order"
 
 export const useOrderStore = defineStore("order", () => {
   /** 买家购买记录 */
@@ -45,7 +61,7 @@ export const useOrderStore = defineStore("order", () => {
     const { data } = await getSellerRecordListApi({ pageNo, pageSize })
     console.log(data)
   }
-  
+
   // 返回所有属性和方法
   return {
     getBuyerRecordList,

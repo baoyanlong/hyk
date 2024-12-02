@@ -1,4 +1,3 @@
-import { reactive, ref } from "vue"
 import { pinia } from "@/stores"
 import { defineStore } from "pinia"
 import { getBannerListApi, getBroadcastApi } from "@/api/home"
@@ -14,7 +13,7 @@ export const useHomeStore = defineStore("home", () => {
     const { data } = await getBroadcastApi()
     console.log(data)
   }
- 
+
   // 返回所有属性和方法
   return {
     getBannerList,

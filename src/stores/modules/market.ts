@@ -1,12 +1,39 @@
-import { reactive, ref } from "vue"
 import { pinia } from "@/stores"
 import { defineStore } from "pinia"
-import { getGameListApi, getGameProductListApi, getGameRecordDetailApi, getOneKeyPriceApi, getSellerGetCaptchaApi, savePreStepApi, terminatePublishApi, updatePriceApi, upOrDownApi } from "@/api/market"
-import { GameListRequestData, GameProductListRequestData, GameRecordDetailRequestData, OneKeyPriceRequestData, SavePreStepRequestData, SellerGetCaptchaRequestData, TerminatePublishRequestData, UpdatePriceRequestData, UpOrDownRequestData } from "@/api/market/types/market"
+import {
+  getGameListApi,
+  getGameProductListApi,
+  getGameRecordDetailApi,
+  getOneKeyPriceApi,
+  getSellerGetCaptchaApi,
+  savePreStepApi,
+  terminatePublishApi,
+  updatePriceApi,
+  upOrDownApi
+} from "@/api/market"
+import {
+  GameListRequestData,
+  GameProductListRequestData,
+  GameRecordDetailRequestData,
+  OneKeyPriceRequestData,
+  SavePreStepRequestData,
+  SellerGetCaptchaRequestData,
+  TerminatePublishRequestData,
+  UpdatePriceRequestData,
+  UpOrDownRequestData
+} from "@/api/market/types/market"
 
 export const useMarketStore = defineStore("market", () => {
   /** 游戏列表 */
-  const getGameList = async ({ flagHomepage, gameId, gameName, pageNo, pageSize, sort, sortField }: GameListRequestData) => {
+  const getGameList = async ({
+    flagHomepage,
+    gameId,
+    gameName,
+    pageNo,
+    pageSize,
+    sort,
+    sortField
+  }: GameListRequestData) => {
     const { data } = await getGameListApi({ flagHomepage, gameId, gameName, pageNo, pageSize, sort, sortField })
     console.log(data)
   }

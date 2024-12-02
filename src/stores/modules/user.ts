@@ -1,8 +1,27 @@
-import { reactive, ref } from "vue"
 import { pinia } from "@/stores"
 import { defineStore } from "pinia"
-import { BindAlipayRequestData, BindSteamRequestData, MessageListRequestData, PreWithdrawInfoRequestData, RealNameRequestData, UnBindSteamRequestData, WithdrawRecordRequestData, WithdrawRequestData } from "@/api/user/types/user"
-import { bindAlipayApi, bindSteamApi, getFundAccountApi, getMessageListApi, getPreWithdrawInfoApi, getRealNameApi, getUserInfoApi, getWithdrawRecordApi, unBindSteamApi, withdrawApi } from "@/api/user"
+import {
+  BindAlipayRequestData,
+  BindSteamRequestData,
+  MessageListRequestData,
+  PreWithdrawInfoRequestData,
+  RealNameRequestData,
+  UnBindSteamRequestData,
+  WithdrawRecordRequestData,
+  WithdrawRequestData
+} from "@/api/user/types/user"
+import {
+  bindAlipayApi,
+  bindSteamApi,
+  getFundAccountApi,
+  getMessageListApi,
+  getPreWithdrawInfoApi,
+  getRealNameApi,
+  getUserInfoApi,
+  getWithdrawRecordApi,
+  unBindSteamApi,
+  withdrawApi
+} from "@/api/user"
 
 export const useUserStore = defineStore("user", () => {
   /** 绑定支付宝信息 */

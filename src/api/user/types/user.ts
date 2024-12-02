@@ -3,7 +3,7 @@ export interface BindAlipayRequestData {
   alipayAccount: string
   name: string
 }
-export type BindAlipayResponseData = ApiResponseData<Boolean>
+export type BindAlipayResponseData = ApiResponseData<boolean>
 
 /** 绑定steam */
 export interface BindSteamRequestData {
